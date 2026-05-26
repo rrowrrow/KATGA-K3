@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wordle/Katla Clone - Langkah 7</title>
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <main class="wrap">
+    <header class="header">
+      <h1>Simulasi KATGA (KATA-KATA K3)</h1>
+      <p class="sub">
+        Ketik A–Z atau klik keyboard. <b>Enter</b> untuk submit, <b>⌫</b> untuk hapus.
+        Setelah selesai, klik <b>Copy Hasil</b> untuk menyalin emoji grid.
+      </p>
+    </header>
+
+    <section class="game">
+      <!-- Board -->
+      <div id="board" class="board" aria-label="Papan permainan"></div>
+
+      <!-- Keyboard Virtual -->
+      <div id="keyboard" class="keyboard" aria-label="Keyboard virtual"></div>
+
+      <!-- Controls -->
+      <div class="controls">
+        <div class="row">
+          <input
+            id="guess"
+            class="input"
+            type="text"
+            inputmode="text"
+            autocomplete="off"
+            maxlength="5"
+            placeholder="(Opsional) Ketik 5 huruf"
+          />
+          <button id="submit" class="btn primary">Coba</button>
+          <button id="reset" class="btn">Reset</button>
+          <button id="share" class="btn" disabled>Copy Hasil</button>
+        </div>
+
+        <p id="message" class="message" role="status" aria-live="polite"></p>
+
+        <details class="help">
+          <summary>Petunjuk singkat</summary>
+          <ul>
+            <li>🟩 Hijau: huruf benar & posisi benar</li>
+            <li>🟨 Kuning: huruf ada tapi posisi salah</li>
+            <li>⬜ Abu: huruf tidak ada (atau kelebihan huruf ganda)</li>
+          </ul>
+        </details>
+      </div>
+
+      <!-- Output share (biar kelihatan sebelum dicopy) -->
+      <textarea id="shareText" class="shareText" readonly
+        placeholder="Hasil emoji akan muncul di sini setelah ada tebakan..."></textarea>
+    </section>
+
+    <footer class="footer">
+      <small>Langkah 7: animasi flip + copy emoji hasil.</small>
+    </footer>
+  </main>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
